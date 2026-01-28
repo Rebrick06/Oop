@@ -1,17 +1,18 @@
 import java.awt.*;
 
 // klassen kanse borde vara abstrakt ?? 
-public abstract class Car {
+public abstract class Car implements Moveable {
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
     protected Color color; // Color of the car
     public String modelName; // The car model name
 
-    /*public  car(){
-
-    } */
-   
+    public Car(int nrDoors, Color color, double enginePower, String modelName){
+        this.nrDoors = nrDoors;
+        this.color = color;
+        this.enginePower = enginePower;
+    }
 
     public int getNrDoors(){
         return nrDoors;
@@ -40,7 +41,7 @@ public abstract class Car {
 	    currentSpeed = 0;
     }
 
-    public abstract double speedFactor();
+    protected abstract double speedFactor();
 
     private  void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
@@ -59,4 +60,23 @@ public abstract class Car {
     public void brake(double amount){
         decrementSpeed(amount);
     }
+
+    @Override
+    public void move() {
+        getCurrentSpeed();
+    }
+
+    @Override
+    public void turnLeft() {
+        
+    }
+
+    @Override
+    public void turnRight() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    
+
+    
 }
