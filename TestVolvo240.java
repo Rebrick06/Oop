@@ -9,9 +9,7 @@ class TestVolvo240{
 
     @BeforeEach
     public void before() {
-
         volvo240 = new Volvo240();
-
     }
 
     @Test

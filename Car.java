@@ -24,6 +24,7 @@ public abstract class Car implements Moveable {
     public int getNrDoors(){
         return nrDoors;
     }
+
     public double getEnginePower(){
         return enginePower;
     }
@@ -50,7 +51,7 @@ public abstract class Car implements Moveable {
 
     protected abstract double speedFactor();
 
-    private  void incrementSpeed(double amount){
+    private void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
 
@@ -58,20 +59,18 @@ public abstract class Car implements Moveable {
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
     
-    // TODO fix this method according to lab pm
     public void gas(double amount){
         if(amount > 0 && amount < 1){
-            if (getCurrentSpeed() < getEnginePower() && getEnginePower() > 0 ) {
+            if (getCurrentSpeed() < getEnginePower() && getCurrentSpeed() > 0 ) {
                 incrementSpeed(amount);
                 move();
             }
         }
     }
 
-    // TODO fix this method according to lab pm
     public void brake(double amount){
         if(amount > 0 && amount < 1) {
-            if (getCurrentSpeed() < getEnginePower() && getEnginePower() > 0 ) {
+            if (getCurrentSpeed() < getEnginePower() && getCurrentSpeed() > 0 ) {
                 decrementSpeed(amount);
                 move();
             }
