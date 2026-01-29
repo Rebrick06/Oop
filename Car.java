@@ -1,6 +1,5 @@
 import java.awt.*;
 
-// klassen kanse borde vara abstrakt ?? 
 public abstract class Car implements Moveable {
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
@@ -61,12 +60,22 @@ public abstract class Car implements Moveable {
     
     // TODO fix this method according to lab pm
     public void gas(double amount){
-        incrementSpeed(amount);
+        if(amount > 0 && amount < 1){
+            if (getCurrentSpeed() < getEnginePower() && getEnginePower() > 0 ) {
+                incrementSpeed(amount);
+                move();
+            }
+        }
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
-        decrementSpeed(amount);
+        if(amount > 0 && amount < 1) {
+            if (getCurrentSpeed() < getEnginePower() && getEnginePower() > 0 ) {
+                decrementSpeed(amount);
+                move();
+            }
+        }
     }
 
     @Override
