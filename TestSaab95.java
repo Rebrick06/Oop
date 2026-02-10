@@ -35,5 +35,6 @@ public class TestSaab95 {
         saab95.turnLeft();
         double x_before = saab95.x;
         saab95.move();
-        assertTrue(x_before > saab95.x);}
+        assertTrue(x_before > saab95.x);
+    }
 }

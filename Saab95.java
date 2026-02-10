@@ -1,14 +1,12 @@
 import java.awt.*;
 
-public class Saab95 extends Car{
+public class Saab95 extends Vehicle {
 
     private boolean turboOn;
-    
-    
+
     public Saab95(){
         super(2, Color.red, 125,  "Saab95");
 	    turboOn = false;
-        stopEngine();
     }
     
     @Override
@@ -25,6 +23,4 @@ public class Saab95 extends Car{
     public void setTurboOff(){
 	    turboOn = false;
     }
-    
-    
 }

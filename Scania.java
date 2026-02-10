@@ -1,0 +1,33 @@
+import java.awt.*;
+
+public class Scania extends Truck {
+
+    private double platformAngle;
+
+    public Scania(){
+        super(2, Color.blue, 150, "ScaniaTruck");
+        this.platformAngle = 0;
+
+    }
+
+    @Override
+    public void move() {
+        if (platformAngle == 0) {
+            super.move();
+        }
+    }
+
+    public void raisePlatform(int angle) {
+        if (getCurrentSpeed() == 0) {
+            platformAngle = Math.min(platformAngle + angle, 70);
+        }
+    }
+
+    public void lowerPlatform(int angle) {
+        if (getCurrentSpeed() == 0) {
+            platformAngle = Math.max(platformAngle - angle, 0);
+        }
+    }
+
+
+}
