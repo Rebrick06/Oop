@@ -10,6 +10,10 @@ public class Scania extends Truck {
 
     }
 
+    public double getPlatformAngle() {
+        return platformAngle;
+    }
+
     @Override
     public void move() {
         if (platformAngle == 0) {
@@ -17,13 +21,13 @@ public class Scania extends Truck {
         }
     }
 
-    public void raisePlatform(int angle) {
+    public void raisePlatform(double angle) {
         if (getCurrentSpeed() == 0) {
             platformAngle = Math.min(platformAngle + angle, 70);
         }
     }
 
-    public void lowerPlatform(int angle) {
+    public void lowerPlatform(double angle) {
         if (getCurrentSpeed() == 0) {
             platformAngle = Math.max(platformAngle - angle, 0);
         }
