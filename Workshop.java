@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Workshop<T extends Vehicle> {
+public class Workshop<T extends IVehicleWorkshop> {
 
     private int max;
     private List<T> vehicles = new ArrayList<>();
@@ -14,6 +14,7 @@ public class Workshop<T extends Vehicle> {
 
     public T unload(T vehicle) {
         if (vehicles.isEmpty()) return null;
+        vehicle.gas(0);
         if (vehicles.contains(vehicle)) {
             return vehicles.remove(vehicles.indexOf(vehicle));
         } else {

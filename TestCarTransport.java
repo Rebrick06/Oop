@@ -56,7 +56,7 @@ public class TestCarTransport {
         saab95.startEngine();
         saab95.gas(0.3);
         saab95.brake(0.3);
-        carTransport.loadVehicle(saab95);
+            carTransport.loadVehicle(saab95);
         assertEquals(1, carTransport.getLoadedSize());
     }
 
